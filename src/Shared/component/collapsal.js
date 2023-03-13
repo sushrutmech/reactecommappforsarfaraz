@@ -36,7 +36,7 @@ export default function Collapsal(props) {
                             aria-controls="panel1a-content"
                             id="panel1a-header"
                         >
-                            <Typography>{collapsalData.catergory}</Typography>
+                            <Typography variant="h6" color="black">{collapsalData.catergory}</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             {/* <ListInColapsal collapsalData={collapsalData} selectedCategory={collapsalData.catergory} /> */}

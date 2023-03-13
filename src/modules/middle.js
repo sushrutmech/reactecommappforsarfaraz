@@ -32,24 +32,21 @@ export default function Middle(props) {
 
     return (
         <div>
-            <Grid container spacing={2} >
-                <Grid item md={12}>
+            <div>
+                <div>
                     <Carosel collapsalData={collapselDataProps} />
-                </Grid>
-            </Grid>
-            <Grid container spacing={2}>
-                <Grid item md={12}>
+                </div>
+            </div>
+            <div >
+                <div>
                     <Collapsal collapsalData={collapselDataProps} dataFromCollapsalProps={dataFromCollapsal} orderCollectorArray={orderCollectorArray} />
-                </Grid>
-            </Grid>
+                </div>
+            </div>
             <div className='cartDiv'>
-                <Cart orderDataProps={order} carItemNo={orderDArray} orderCollectorArray={orderCollectorArry} />
+                <Cart collapsalData={collapselDataProps} orderDataProps={order} carItemNo={orderDArray} orderCollectorArray={orderCollectorArry} />
             </div>
 
-            <Grid container spacing={2}>
-                <Grid item md={1}>
-                </Grid>
-            </Grid>
+       
         </div>
     );
 }

@@ -46,27 +46,33 @@ export default function DishesCard(props) {
   }
  
   const imgPath = "../../static/images/dish3.jpg"
+  const imgLink = String(imgPath)
   const imgUrl = cardData.imgaeUrl
   // console.log("card proops", props.cardData, typeof (props.cardData));
 
-  return (
-    <Card sx={{ maxWidth: 245 }}>
+  return (<>
+   
+ 
+ 
+   
+    <Card sx={{ maxWidth: 345 }}>
 
       <CardHeader
       />
       <CardMedia
         component="img"
         height="194"
-        image={require ( "../../static/images/dish3.jpg")} 
-        alt="Paella dish"
+        image={require("../../static/images/dish3.jpg")} 
+        alt={cardData.catergory}
       />
       {/* <img className="card-img-top" src={cardData.imgaeUrl} alt="image not found" /> */}
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="h5" color="green">
           {cardData.catergory}
         </Typography>
       </CardContent>
     </Card>
+    </>
   );
 }
 

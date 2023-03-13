@@ -7,6 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import NoteContext from '../servicesData/contex/notes/noteContex';
+import collapsalData from '../servicesData/CollapsalData';
 
 const bull = (
   <Box
@@ -20,12 +21,17 @@ const bull = (
 let orderArray = [];
 export default function Cart(props) {
 
-  const [order, setOrder] = useState(0);
+  const [order, setOrder] = useState([]);
+  const [quantity, setQuantity] = useState([]);
 
-  // useEffect(() => {
-  //   console.log("use effect run cart comp");
-  //   orderUpdateFunc();
-  // }, [props?.orderDataProps]);
+
+
+  useEffect(() => {
+    console.log("use effect run cart comp");
+    orderUpdateFunc(props.orderCollectorArray, uniqueProducts);
+  }, [props?.orderDataProps,]);
+
+
 
   // console.log("order detail", props.orderDataProps);
 
@@ -39,25 +45,85 @@ export default function Cart(props) {
     //setOrder(orderArray)
   }
 
-  // setOrder(props.orderDataProps)
-  //console.log("order length", orderArray.length);
 
+  const filteredArray1 = [];
+  function orderUpdateFunc(orederCollector, uniqueOrder) {
+    console.log("order up run", orederCollector);
+    console.log("order up run uni order", uniqueOrder);
+    uniqueOrder.map(function (dishData, idx) {
+      const filteredArray = orederCollector.filter(obj => obj.name === dishData.name);
+      filteredArray1.push(filteredArray)
+      // setOrder(filteredArray)
+      console.log("no of dishes", filteredArray1);
+      setOrder(filteredArray1)
+    })
+    const qunatity = order.map((items) => {
+      console.log("itmes inside", items, items.length);
+    })
+  }
+  console.log("calling array out side /*", filteredArray1, order);
 
-  //console.log("order detail func */**", props);
-  function orderUpdateFunc(props = {}) {
-    if (props?.orderDataProps != undefined) {
-      //orderArray.push(props.orderDataProps)
-      //setOrder(orderArray.push(props.orderDataProps))
+  let disheshTotal = [];
+  const dishesData = props.collapsalData.map(function (dishData, idx) {
+    //console.log(dishData);
+    dishData.dishes.map(function (dishIndi, idx) {
+      // console.log("indi dish data" , dishIndi.name);
+      disheshTotal.push(dishIndi.name)
+    })
+  })
 
-    }
-    //console.log("order length from fuction", orderArray.length);
+  console.log("order collector array form cart", props.orderCollectorArray);
+  const cartOrderArray = props.orderCollectorArray;
+  const uniqueProducts = cartOrderArray.filter((product, index, array) =>
+    index === array.findIndex(obj => obj.id === product.id && obj.name === product.name && obj.price === product.price)
+  );
+  let noOfDish = [];
+  const findfucnn = props.orderCollectorArray.find(dish => dish.name == uniqueProducts.name)
 
+  noOfDish.push(findfucnn)
+  console.log("686899", uniqueProducts, "lens9898", noOfDish);
 
+  function orderItemAdd(dishData, äddOrsub) {
+    // console.log("örder add", dishData);
+    // console.log("örder state", order);
+    // console.log("2nd argument", äddOrsub);
+    order.map((items) => {
+      // console.log("map inside add", items);
+      // console.log("map checker", items[0].name);
+
+      if (äddOrsub == 'add') {
+        // console.log("push data");
+        if (items[0].name == dishData.name) {
+          // console.log("if call", items);
+          items.push(dishData)
+          setQuantity(items);
+          // console.log("after push", items);
+        }
+      }
+      if (äddOrsub == 'sub') {
+        // console.log("pop data");
+        if (items[0].name == dishData.name) {
+          // console.log("if call sub", items);
+          items.pop(dishData)
+          setQuantity(items);
+          // console.log("after pop", items);
+        }
+      }
+
+    })
 
   }
 
-  console.log("order collector array form cart", props.orderCollectorArray);
-  //orderUpdateFunc();
+  function orderItemSubtract(dishData) {
+    console.log("örder subtrrct", dishData);
+    console.log("örder add", dishData);
+    console.log("örder state", order);
+    order.map((items) => {
+      console.log("map inside sub", items);
+      console.log("map checker sub", items[0].name);
+    })
+  }
+
   return (
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
@@ -65,30 +131,49 @@ export default function Cart(props) {
           Order Cart
         </Typography>
         <Typography variant="h5" component="div">
-          order no. {props.orderCollectorArray.length}
+          order no. {order.length}
         </Typography>
-        {props.orderCollectorArray.length > 0 &&
-          <Typography variant="h5" component="div">
-            maratha chiken
-          </Typography>
-        }
-
-        {props.orderCollectorArray.map(function (orderArraydata, idx) {
-          console.log("in mapdata***", orderArraydata.name);
+        {uniqueProducts.map(function (dishData, idx) {
           return (
-            <div key={idx} >
-              {orderArraydata.name == 'maratha chiken' &&
-                <Typography variant="h5" component="div">
-                  maratha chiken
-                </Typography>
-              }
-            </div>
+            <>
+              <div key={idx} >
+
+                {dishData.name}: *
+                {order.map((items) => {
+                  console.log("itmes inside969", items[0].name, items.length);
+                  return (
+                    <span>{items[0].name === dishData.name ? items.length : ''}
+                    </span>
+                  )
+                })}= {dishData.rate}
+              </div>
+              <div>
+
+                <Button size="small" onClick={() => orderItemAdd(dishData, 'add')} >Add+</Button>
+                {quantity.length > 0 &&
+                  <span>{quantity[0].name === dishData.name ? quantity.length : '8*8'}</span>
+                }
+                <Button size="small" onClick={() => orderItemAdd(dishData, 'sub')} >Subtract-</Button>
+
+              </div>
+            </>
           )
+
         })}
+
+
+        {/* {order.map((items) => {
+          console.log("itmes inside969", items[0].name, items.length);
+          return (
+            <span>{items.length}</span>
+          )
+        })} */}
+
+
 
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small"  variant="contained">Order Now</Button>
       </CardActions>
     </Card>
   );
