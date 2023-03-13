@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/sushrutmech/reactecommappforsarfaraz/static/css/main.8f60882e.css",
-    "main.js": "/sushrutmech/reactecommappforsarfaraz/static/js/main.b1f7f44e.js",
-    "static/js/787.1b2b17eb.chunk.js": "/sushrutmech/reactecommappforsarfaraz/static/js/787.1b2b17eb.chunk.js",
-    "static/media/dish3.jpg": "/sushrutmech/reactecommappforsarfaraz/static/media/dish3.d97d1895caf66f46388b.jpg",
-    "static/media/revicons.eot": "/sushrutmech/reactecommappforsarfaraz/static/media/revicons.a77de540a38981833f9e.eot",
-    "static/media/revicons.ttf": "/sushrutmech/reactecommappforsarfaraz/static/media/revicons.57fd05d4ae650374c8de.ttf",
-    "static/media/revicons.woff": "/sushrutmech/reactecommappforsarfaraz/static/media/revicons.e8746a624ed098489406.woff",
-    "index.html": "/sushrutmech/reactecommappforsarfaraz/index.html",
-    "main.8f60882e.css.map": "/sushrutmech/reactecommappforsarfaraz/static/css/main.8f60882e.css.map",
-    "main.b1f7f44e.js.map": "/sushrutmech/reactecommappforsarfaraz/static/js/main.b1f7f44e.js.map",
-    "787.1b2b17eb.chunk.js.map": "/sushrutmech/reactecommappforsarfaraz/static/js/787.1b2b17eb.chunk.js.map"
+    "main.css": "/reactecommappforsarfaraz/static/css/main.8c874271.css",
+    "main.js": "/reactecommappforsarfaraz/static/js/main.c1868aa7.js",
+    "static/js/787.1b2b17eb.chunk.js": "/reactecommappforsarfaraz/static/js/787.1b2b17eb.chunk.js",
+    "static/media/dish3.jpg": "/reactecommappforsarfaraz/static/media/dish3.d97d1895caf66f46388b.jpg",
+    "static/media/revicons.eot": "/reactecommappforsarfaraz/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/reactecommappforsarfaraz/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/reactecommappforsarfaraz/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/reactecommappforsarfaraz/index.html",
+    "main.8c874271.css.map": "/reactecommappforsarfaraz/static/css/main.8c874271.css.map",
+    "main.c1868aa7.js.map": "/reactecommappforsarfaraz/static/js/main.c1868aa7.js.map",
+    "787.1b2b17eb.chunk.js.map": "/reactecommappforsarfaraz/static/js/787.1b2b17eb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8f60882e.css",
-    "static/js/main.b1f7f44e.js"
+    "static/css/main.8c874271.css",
+    "static/js/main.c1868aa7.js"
   ]
 }
