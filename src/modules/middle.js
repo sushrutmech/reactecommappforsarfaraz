@@ -11,6 +11,7 @@ export default function Middle(props) {
     const [order, setOrder] = useState();
     const collapselDataProps = collapsalData
     let orderDetail = {};
+    const [orderCollectorArry, setorderCollectorArry] = useState([]);
     useEffect(() => {
         console.log("use effect run ++ middle component ");
         orderDArray.push(orderDetail)
@@ -21,7 +22,12 @@ export default function Middle(props) {
     function dataFromCollapsal(orderDataFromCollapsal) {
         orderDetail = orderDataFromCollapsal
         setOrder(orderDetail);
-        console.log("data in middle from collapsal", orderDetail);
+        //console.log("data in middle from collapsal", orderDetail);
+    }
+
+    function orderCollectorArray(orderCollectorArray){
+        console.log("middle order collector",orderCollectorArray);
+        setorderCollectorArry(orderCollectorArray);
     }
 
     return (
@@ -33,11 +39,11 @@ export default function Middle(props) {
             </Grid>
             <Grid container spacing={2}>
                 <Grid item md={12}>
-                    <Collapsal collapsalData={collapselDataProps} dataFromCollapsalProps={dataFromCollapsal} />
+                    <Collapsal collapsalData={collapselDataProps} dataFromCollapsalProps={dataFromCollapsal} orderCollectorArray={orderCollectorArray} />
                 </Grid>
             </Grid>
             <div className='cartDiv'>
-                <Cart orderDataProps={order} carItemNo={orderDArray} />
+                <Cart orderDataProps={order} carItemNo={orderDArray} orderCollectorArray={orderCollectorArry} />
             </div>
 
             <Grid container spacing={2}>

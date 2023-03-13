@@ -17,13 +17,16 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import NoteState from '../servicesData/contex/notes/NotesState';
 
+let orderDetailCollector=[];
 export default function CollapsalCard(props) {
     //console.log("data of dishesh card ++" , props.orderDetailFuncProps , props);
-
     function orderItem(orderDetail){
          console.log("click order" , orderDetail);
+         console.log("order collector array" , orderDetailCollector.push(orderDetail),"length" , orderDetailCollector.length);
          props.orderDetailFuncProps(orderDetail);
+         props.orderCollectorArray(orderDetailCollector);
     }
 
   return (
@@ -42,8 +45,17 @@ export default function CollapsalCard(props) {
         <Typography variant="body2" color="text.secondary">
           {props.cardDataProps.name}
         </Typography>
-        <Button variant="contained" onClick={()=>orderItem(props.cardDataProps)}>Contained</Button>
+        <Typography variant="body2" color="text.secondary">
+          {props.cardDataProps.desciption}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {props.cardDataProps.rate}
+        </Typography>
+        <Button variant="contained" onClick={()=>orderItem(props.cardDataProps)}>Add new</Button>
       </CardContent>
+      {/* <NoteState orderDetail={props.cardDataProps}>
+    
+      </NoteState> */}
     </Card>
   );
 }

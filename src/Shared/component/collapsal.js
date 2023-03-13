@@ -12,11 +12,17 @@ import Grid from '@mui/material/Grid';
 export default function Collapsal(props) {
     const accordinaData = props.collapsalData;
     //console.log("acc data", accordinaData);
+    let orderDetailArray=[];
 
     function orderDetailFunc(dataFromchild){
-        console.log("from pCollapsal" , dataFromchild);
+        //console.log("from pCollapsal" , dataFromchild);
         props.dataFromCollapsalProps(dataFromchild)
        
+    }
+
+    function orderCollectorArrayFunc(orderCollectorArray){
+        console.log("collector array" , orderCollectorArray);
+        props.orderCollectorArray(orderCollectorArray)
     }
     // <li key={idx}>{d.catergory}</li>
     return (
@@ -38,7 +44,7 @@ export default function Collapsal(props) {
                                 {accordinaData[idx].dishes.map(function (collapsalData, idx) {
                                     return (
                                         <Grid item xs={2} sm={4} md={4} key={idx}>
-                                            <CollapsalCard key={idx} cardDataProps={collapsalData} orderDetailFuncProps={orderDetailFunc} />
+                                            <CollapsalCard key={idx} cardDataProps={collapsalData} orderCollectorArray={orderCollectorArrayFunc} orderDetailFuncProps={orderDetailFunc} />
                                         </Grid>
                                     )
                                 })}
