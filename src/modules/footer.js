@@ -10,13 +10,13 @@ export default function Footer(props) {
 
   return (
     <div>
-      {/* <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" /> */}
+       <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" /> 
       {/*---- Include the above in your HEAD tag --------*/}
-      {/* <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossOrigin="anonymous" />
+       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossOrigin="anonymous" />
       <section className="footers bg-light pt-5 pb-3">
         <div className="container pt-5">
           <div className="row">
-            <div className="col-xs-12 col-sm-6 col-md-4 footers-one">
+            {/* <div className="col-xs-12 col-sm-6 col-md-4 footers-one">
               <div className="footers-logo">
                 <img src="http://velikorodnov.com/html/autotrader/images/logo.png" alt="Logo" style={{width: '120px'}} />
               </div>
@@ -59,7 +59,7 @@ export default function Footer(props) {
                 <li><a href="about.html">Feedbacks</a></li>
                 <li><a href="about.html">User Agreement</a></li>
               </ul>
-            </div>
+            </div> */}
             <div className="col-xs-12 col-sm-6 col-md-2 footers-five">
               <h5>Company </h5>
               <ul className="list-unstyled">
@@ -88,11 +88,11 @@ export default function Footer(props) {
         <div className="container">
           <div className="row text-center">
             <div className="col-md-12 pt-3">
-              <p className="text-muted">© 2018 xyz Software Pvt. Ltd.</p>
+              <p className="text-muted">© 2023 xyz Software Pvt. Ltd.</p>
             </div>
           </div>
         </div>
-      </section> */}
+      </section> 
     </div>
   );
 }
