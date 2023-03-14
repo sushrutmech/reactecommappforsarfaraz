@@ -9,27 +9,27 @@ const collapsalData = [
             {
                 name: 'maratha chiken',
                 desciption:"Start your day off right with our delicious Organic Blueberry Granola! Made with whole grain oats, organic honey, and a mix of nuts and seeds, this granola is the perfect combination of sweet and crunchy. We've added in dried blueberries for a burst of fruity flavor that will leave your taste buds wanting more. Our granola is certified organic and free from any artificial colors or flavors, so you can feel good about what you're eating.",
-                rate: "240",
+                rate: 240,
                 quantity:0
             },
             {
                 name: 'panjabi tadka',
                 desciption:"Start your day off right with our delicious Organic Blueberry Granola! Made with whole grain oats, organic honey, and a mix of nuts and seeds, this granola is the perfect combination of sweet and crunchy. We've added in dried blueberries for a burst of fruity flavor that will leave your taste buds wanting more. Our granola is certified organic and free from any artificial colors or flavors, so you can feel good about what you're eating.",
-                rate: "230rs",
+                rate: 230,
                 quantity:0
             },
             {
                 name: 'arabian tandorii',
                 desciption:"Start your day off right with our delicious Organic Blueberry Granola! Made with whole grain oats, organic honey, and a mix of nuts and seeds, this granola is the perfect combination of sweet and crunchy. We've added in dried blueberries for a burst of fruity flavor that will leave your taste buds wanting more. Our granola is certified organic and free from any artificial colors or flavors, so you can feel good about what you're eating.",
 
-                rate: "340",
+                rate: 340,
                 quantity:0
             },
             {
                 name: 'kolahpuri chiken',
                 desciption:"Start your day off right with our delicious Organic Blueberry Granola! Made with whole grain oats, organic honey, and a mix of nuts and seeds, this granola is the perfect combination of sweet and crunchy. We've added in dried blueberries for a burst of fruity flavor that will leave your taste buds wanting more. Our granola is certified organic and free from any artificial colors or flavors, so you can feel good about what you're eating.",
 
-                rate: "240",
+                rate: 240,
                 quantity:0
             }
         ]
@@ -44,21 +44,20 @@ const collapsalData = [
                 name: 'Paper Dosa',
                 desciption:"Start your day off right with our delicious Organic Blueberry Granola! Made with whole grain oats, organic honey, and a mix of nuts and seeds, this granola is the perfect combination of sweet and crunchy. We've added in dried blueberries for a burst of fruity flavor that will leave your taste buds wanting more. Our granola is certified organic and free from any artificial colors or flavors, so you can feel good about what you're eating.",
 
-                rate: "240",
+                rate: 240,
                 quantity:0
             },
             {
                 name: 'Idli sambar',
                 desciption:"Start your day off right with our delicious Organic Blueberry Granola! Made with whole grain oats, organic honey, and a mix of nuts and seeds, this granola is the perfect combination of sweet and crunchy. We've added in dried blueberries for a burst of fruity flavor that will leave your taste buds wanting more. Our granola is certified organic and free from any artificial colors or flavors, so you can feel good about what you're eating.",
-
-                rate: "240rs",
+                rate: 240,
                 quantity:0
             },
             {
                 name: 'Rasaa Chawal',
                 desciption:"Start your day off right with our delicious Organic Blueberry Granola! Made with whole grain oats, organic honey, and a mix of nuts and seeds, this granola is the perfect combination of sweet and crunchy. We've added in dried blueberries for a burst of fruity flavor that will leave your taste buds wanting more. Our granola is certified organic and free from any artificial colors or flavors, so you can feel good about what you're eating.",
 
-                rate: "240",
+                rate: 240,
                 quantity:0
             }
         ]
@@ -73,21 +72,21 @@ const collapsalData = [
                 name: 'maratha tari',
                 desciption:"Start your day off right with our delicious Organic Blueberry Granola! Made with whole grain oats, organic honey, and a mix of nuts and seeds, this granola is the perfect combination of sweet and crunchy. We've added in dried blueberries for a burst of fruity flavor that will leave your taste buds wanting more. Our granola is certified organic and free from any artificial colors or flavors, so you can feel good about what you're eating.",
 
-                rate: "240rs",
+                rate: 240,
                 quantity:0
             },
             {
                 name: 'panjabi paneer tadka',
                 desciption:"Start your day off right with our delicious Organic Blueberry Granola! Made with whole grain oats, organic honey, and a mix of nuts and seeds, this granola is the perfect combination of sweet and crunchy. We've added in dried blueberries for a burst of fruity flavor that will leave your taste buds wanting more. Our granola is certified organic and free from any artificial colors or flavors, so you can feel good about what you're eating.",
 
-                rate: "240rs",
+                rate: 240,
                 quantity:0
             },
             {
                 name: 'Garlic chilli',
                 desciption:"Start your day off right with our delicious Organic Blueberry Granola! Made with whole grain oats, organic honey, and a mix of nuts and seeds, this granola is the perfect combination of sweet and crunchy. We've added in dried blueberries for a burst of fruity flavor that will leave your taste buds wanting more. Our granola is certified organic and free from any artificial colors or flavors, so you can feel good about what you're eating.",
 
-                rate: "240rs",
+                rate: 240,
                 quantity:0
             }
             
@@ -103,28 +102,28 @@ const collapsalData = [
                 name: 'Missal Pav',
                 desciption:"Start your day off right with our delicious Organic Blueberry Granola! Made with whole grain oats, organic honey, and a mix of nuts and seeds, this granola is the perfect combination of sweet and crunchy. We've added in dried blueberries for a burst of fruity flavor that will leave your taste buds wanting more. Our granola is certified organic and free from any artificial colors or flavors, so you can feel good about what you're eating.",
 
-                rate: "240rs",
+                rate: 240,
                 quantity:0
             },
             {
                 name: 'Gilla Wada',
                 desciption:"Start your day off right with our delicious Organic Blueberry Granola! Made with whole grain oats, organic honey, and a mix of nuts and seeds, this granola is the perfect combination of sweet and crunchy. We've added in dried blueberries for a burst of fruity flavor that will leave your taste buds wanting more. Our granola is certified organic and free from any artificial colors or flavors, so you can feel good about what you're eating.",
 
-                rate: "240rs",
+                rate: 240,
                 quantity:0
             },
             {
                 name: 'Fish Curry',
                 desciption:"Start your day off right with our delicious Organic Blueberry Granola! Made with whole grain oats, organic honey, and a mix of nuts and seeds, this granola is the perfect combination of sweet and crunchy. We've added in dried blueberries for a burst of fruity flavor that will leave your taste buds wanting more. Our granola is certified organic and free from any artificial colors or flavors, so you can feel good about what you're eating.",
 
-                rate: "240rs",
+                rate: 240,
                 quantity:0
             },
             {
                 name: 'Fish fry',
                 desciption:"Start your day off right with our delicious Organic Blueberry Granola! Made with whole grain oats, organic honey, and a mix of nuts and seeds, this granola is the perfect combination of sweet and crunchy. We've added in dried blueberries for a burst of fruity flavor that will leave your taste buds wanting more. Our granola is certified organic and free from any artificial colors or flavors, so you can feel good about what you're eating.",
 
-                rate: "240rs",
+                rate: 240,
                 quantity:0
             }
         ]
@@ -139,28 +138,28 @@ const collapsalData = [
                 name: 'Chole Puri',
                 desciption:"Start your day off right with our delicious Organic Blueberry Granola! Made with whole grain oats, organic honey, and a mix of nuts and seeds, this granola is the perfect combination of sweet and crunchy. We've added in dried blueberries for a burst of fruity flavor that will leave your taste buds wanting more. Our granola is certified organic and free from any artificial colors or flavors, so you can feel good about what you're eating.",
 
-                rate: "240rs",
+                rate: 240,
                 quantity:0
             },
             {
                 name: 'Chole Culche',
                 desciption:"Start your day off right with our delicious Organic Blueberry Granola! Made with whole grain oats, organic honey, and a mix of nuts and seeds, this granola is the perfect combination of sweet and crunchy. We've added in dried blueberries for a burst of fruity flavor that will leave your taste buds wanting more. Our granola is certified organic and free from any artificial colors or flavors, so you can feel good about what you're eating.",
 
-                rate: "240rs",
+                rate: 240,
                 quantity:0
             },
             {
                 name: 'Chole Bhature',
                 desciption:"Start your day off right with our delicious Organic Blueberry Granola! Made with whole grain oats, organic honey, and a mix of nuts and seeds, this granola is the perfect combination of sweet and crunchy. We've added in dried blueberries for a burst of fruity flavor that will leave your taste buds wanting more. Our granola is certified organic and free from any artificial colors or flavors, so you can feel good about what you're eating.",
 
-                rate: "240rs",
+                rate: 240,
                 quantity:0
             },
             {
                 name: 'Mughalaii Chiken',
                 desciption:"Start your day off right with our delicious Organic Blueberry Granola! Made with whole grain oats, organic honey, and a mix of nuts and seeds, this granola is the perfect combination of sweet and crunchy. We've added in dried blueberries for a burst of fruity flavor that will leave your taste buds wanting more. Our granola is certified organic and free from any artificial colors or flavors, so you can feel good about what you're eating.",
                 
-                rate: "240rs",
+                rate: 40,
                 quantity:0
             }
         ]

@@ -6,9 +6,8 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import NoteContext from '../servicesData/contex/notes/noteContex';
-import collapsalData from '../servicesData/CollapsalData';
-import ReactWhatsapp from 'react-whatsapp';
+
+
 
 const bull = (
   <Box
@@ -20,13 +19,18 @@ const bull = (
 );
 
 let orderArray = [];
+var totalOderPriceArray = [];
 export default function Cart(props) {
 
   const [order, setOrder] = useState([]);
   const [quantity, setQuantity] = useState([]);
   const [quantity1, setQuantity1] = useState([]);
+  const [totalOderPrice, setTotalOderPrice] = useState([]);
 
-
+  var reciptOrder = {
+    totalOrder: "",
+    totalOrderPrice: ""
+  }
 
   useEffect(() => {
     //console.log("use effect run cart comp");
@@ -34,10 +38,6 @@ export default function Cart(props) {
   }, [props?.orderDataProps,]);
 
 
-
-  // console.log("order detail", props.orderDataProps);
-
-  //console.log("orderr array" , orderArray);
   if (props?.orderDataProps != undefined) {
     //console.log("push value" ,props?.orderDataProps );
     orderArray.push(props?.orderDataProps)
@@ -50,14 +50,14 @@ export default function Cart(props) {
       const filteredArray = orederCollector.filter(obj => obj.name === dishData.name);
       filteredArray1.push(filteredArray)
       // setOrder(filteredArray)
-     // console.log("no of dishes", filteredArray1);
+      // console.log("no of dishes", filteredArray1);
       setOrder(filteredArray1)
     })
     const qunatity = order.map((items) => {
-    
+
     })
   }
- // console.log("calling array out side /*", filteredArray1, order);
+  // console.log("calling array out side /*", filteredArray1, order);
 
   let disheshTotal = [];
   const dishesData = props.collapsalData.map(function (dishData, idx) {
@@ -68,7 +68,7 @@ export default function Cart(props) {
     })
   })
 
- // console.log("order collector array form cart", props.orderCollectorArray);
+  // console.log("order collector array form cart", props.orderCollectorArray);
   const cartOrderArray = props.orderCollectorArray;
   const uniqueProducts = cartOrderArray.filter((product, index, array) =>
     index === array.findIndex(obj => obj.id === product.id && obj.name === product.name && obj.price === product.price)
@@ -78,73 +78,98 @@ export default function Cart(props) {
   noOfDish.push(findfucnn)
   //console.log("686899", uniqueProducts, "lens9898", noOfDish);
 
-  function addQunatityFucn(itme, addOrSub){
-    console.log("addqunatity fun" , itme, addOrSub);
-    console.log("unique data array" ,uniqueProducts );
-    const existingItem = uniqueProducts.find(orderItem=> orderItem === itme )
-    console.log(existingItem)
-    if (addOrSub=="add") {
-      if(existingItem===itme) {
+  function whatsappOderFunc(reciptData) {
+    console.log("whta recip data", reciptData);
+    let mobileNumber = 7000423252
+    // Appending the phone number to the URL
+    let url = `https://web.whatsapp.com/send?phone=${mobileNumber}`;
+    // Appending the message to the URL by encoding it
+    url += `&text=${encodeURI(reciptData)}&app_absent=0`;
+    // Open our newly created URL in a new tab to send the message
+    window.open(url);
+  }
+
+  function reciptOrderFunc(totalOrder, totalOrderPrice) {
+    reciptOrder.totalOrder = totalOrder
+    reciptOrder.totalOrderPrice = totalOrderPrice
+    console.log("recipt fuction", reciptOrder);
+    //let reciptData = JSON.stringify()
+    //whatsappOderFunc(reciptOrder);
+
+  }
+
+  function sendOrderWhatsappFunc(reciptOrderAtri, fromAddOrSub) {
+    console.log("order nowe data", reciptOrderAtri);
+    setQuantity(reciptOrderAtri);
+    if (fromAddOrSub == "ordernow") {
+      let mobileNumber = 7000423252
+      let orederDataWhatsApp = quantity.totalOrder;
+      let totalOrderPrice = quantity.totalOrderPrice
+      let itemWithQuantitiy = orederDataWhatsApp.map((items)=>{
+       //console.log("itmee" , items.name);
+       return `dish name:- ${items.name}, dish Qunatity:-${items.quantity},  dish Rate:-${items.rate}.        .`
+      })
+      
+      console.log("item and quntiti" , itemWithQuantitiy );
+      // Appending the phone number to the URL
+      let url = `https://web.whatsapp.com/send?phone=${mobileNumber}`;
+      // Appending the message to the URL by encoding it
+      url += `&text=${encodeURI( `${itemWithQuantitiy} ___:- Total Order Price:-${totalOrderPrice}`)}&app_absent=0`;
+      console.log("data to whata app", quantity);
+      // Open our newly created URL in a new tab to send the message
+      window.open(url);
+
+    }
+  }
+
+  function addQunatityFucn(itme, addOrSub) {
+    //console.log("addqunatity fun" , itme, addOrSub);
+    //console.log("unique data array" ,uniqueProducts );
+    const existingItem = uniqueProducts.find(orderItem => orderItem === itme)
+    //console.log(existingItem)
+
+    if (addOrSub == "add") {
+      if (existingItem === itme) {
         itme.quantity++
         setQuantity1(uniqueProducts)
-       console.log("in if von" ,uniqueProducts);
+        console.log("in if von+", uniqueProducts);
+        const TotalPrice = uniqueProducts.map((itmes, idx) => {
+          let pirceEach = itmes.quantity * itmes.rate
+          return pirceEach
+
+        })
+        const TotalOrderPrice = TotalPrice.reduce((a, b) => a + b, 0)
+        setTotalOderPrice(TotalOrderPrice)
+        reciptOrderFunc(uniqueProducts, TotalOrderPrice);
+
+        sendOrderWhatsappFunc(reciptOrder, "add")
+        console.log("prie add to", TotalPrice, TotalOrderPrice, reciptOrder);
       }
     }
 
     if (addOrSub == 'sub') {
-      if(existingItem===itme) {
+      if (existingItem === itme) {
         itme.quantity--
         setQuantity1(uniqueProducts)
-       console.log("in if sub section" ,uniqueProducts);
+        console.log("in if sub section", uniqueProducts);
+        const TotalPrice = uniqueProducts.map((itmes, idx) => {
+          let pirceEach = itmes.rate * itmes.quantity
+          return pirceEach
+
+        })
+        const TotalOrderPrice = TotalPrice.reduce((a, b) => a - b, 0)
+        setTotalOderPrice(TotalOrderPrice * -1)
+        reciptOrderFunc(uniqueProducts, TotalOrderPrice);
+        sendOrderWhatsappFunc(reciptOrder, "sub");
+        console.log("prie add to", TotalPrice, TotalOrderPrice, reciptOrder);
+
       }
 
     }
-    
 
   }
 
 
-
-  function orderItemAdd(dishData, äddOrsub) {
-    // console.log("örder add", dishData);
-    // console.log("örder state", order);
-    // console.log("2nd argument", äddOrsub);
-    order.map((items) => {
-      // console.log("map inside add", items);
-      // console.log("map checker", items[0].name);
-
-      if (äddOrsub == 'add') {
-        // console.log("push data");
-        if (items[0].name == dishData.name) {
-          // console.log("if call", items);
-          items.push(dishData)
-          setQuantity(items);
-          // console.log("after push", items);
-        }
-      }
-      if (äddOrsub == 'sub') {
-        // console.log("pop data");
-        if (items[0].name == dishData.name) {
-          // console.log("if call sub", items);
-          items.pop(dishData)
-          setQuantity(items);
-          // console.log("after pop", items);
-        }
-      }
-
-    })
-
-  }
-
-  function orderItemSubtract(dishData) {
-    console.log("örder subtrrct", dishData);
-    console.log("örder add", dishData);
-    console.log("örder state", order);
-    order.map((items) => {
-      console.log("map inside sub", items);
-      console.log("map checker sub", items[0].name);
-    })
-  }
 
   return (
     <Card sx={{ minWidth: 275 }}>
@@ -152,7 +177,7 @@ export default function Cart(props) {
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           Order Cart
         </Typography>
-        <ReactWhatsapp number="8793110381" message="Hello World!!!" />
+
         <Typography variant="h5" component="div">
           order no. {order.length}
         </Typography>
@@ -160,15 +185,16 @@ export default function Cart(props) {
           return (
             <>
               <div key={idx} >
-                
+
                 {dishData.name}: *
-                {dishData.quantity}= {dishData.rate}
+                {dishData.quantity}= {dishData.rate * `${dishData.quantity}`}
+
               </div>
               <div>
 
-                <Button size="small" onClick={() => { addQunatityFucn(dishData, 'add' )}} >Add+</Button>
+                <Button size="small" onClick={() => { addQunatityFucn(dishData, 'add') }} >Add+</Button>
                 {dishData.quantity}
-                <Button size="small" onClick={() =>  { addQunatityFucn(dishData, 'sub' )}} >Subtract-</Button>
+                <Button size="small" onClick={() => { addQunatityFucn(dishData, 'sub') }} >Subtract-</Button>
 
               </div>
             </>
@@ -178,7 +204,10 @@ export default function Cart(props) {
 
       </CardContent>
       <CardActions>
-        <Button size="small"  variant="contained">Order Now</Button>
+        <Button size="small" onClick={() => { sendOrderWhatsappFunc(reciptOrder, "ordernow") }} variant="contained">Order Now</Button>
+        <Typography variant="h5" component="div">
+          Total {totalOderPrice} Rs.
+        </Typography>
       </CardActions>
     </Card>
   );

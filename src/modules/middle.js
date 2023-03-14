@@ -5,6 +5,7 @@ import Carosel from '../Shared/component/carosel';
 import Collapsal from '../Shared/component/collapsal';
 import collapsalData from '../Shared/servicesData/CollapsalData'
 import Cart from '../Shared/component/cart';
+import { Typography } from '@mui/material';
 
 var orderDArray = [];
 export default function Middle(props) {
@@ -25,17 +26,16 @@ export default function Middle(props) {
         //console.log("data in middle from collapsal", orderDetail);
     }
 
-    function orderCollectorArray(orderCollectorArray){
-        console.log("middle order collector",orderCollectorArray);
+    function orderCollectorArray(orderCollectorArray) {
+        console.log("middle order collector", orderCollectorArray);
         setorderCollectorArry(orderCollectorArray);
     }
 
     return (
         <div>
-            <div>
-                <div>
-                    <Carosel collapsalData={collapselDataProps} />
-                </div>
+            <div className='heading'>
+                <Typography variant="h4" color="blue">Shakir Caterers and Catering services</Typography>
+                <Carosel collapsalData={collapselDataProps} />
             </div>
             <div >
                 <div>
@@ -46,7 +46,7 @@ export default function Middle(props) {
                 <Cart collapsalData={collapselDataProps} orderDataProps={order} carItemNo={orderDArray} orderCollectorArray={orderCollectorArry} />
             </div>
 
-       
+
         </div>
     );
 }
