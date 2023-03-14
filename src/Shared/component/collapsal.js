@@ -11,8 +11,7 @@ import Grid from '@mui/material/Grid';
 
 export default function Collapsal(props) {
     const accordinaData = props.collapsalData;
-    //console.log("acc data", accordinaData);
-    let orderDetailArray=[];
+
 
     function orderDetailFunc(dataFromchild){
         //console.log("from pCollapsal" , dataFromchild);
@@ -24,7 +23,8 @@ export default function Collapsal(props) {
         console.log("collector array" , orderCollectorArray);
         props.orderCollectorArray(orderCollectorArray)
     }
-    // <li key={idx}>{d.catergory}</li>
+  
+    
     return (
         <div className='collapsalContainer'>
 

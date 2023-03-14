@@ -10,12 +10,16 @@ import Button from '@mui/material/Button';
 import NoteState from '../servicesData/contex/notes/NotesState';
 import Grid from '@mui/material/Grid';
 
+
+
 let orderDetailCollector = [];
 export default function CollapsalCard(props) {
   //console.log("data of dishesh card ++" , props.orderDetailFuncProps , props);
+ 
   function orderItem(orderDetail) {
-    console.log("click order", orderDetail);
-    console.log("order collector array", orderDetailCollector.push(orderDetail), "length", orderDetailCollector.length);
+    //console.log("click order", orderDetail);
+   // console.log("order collector array", orderDetailCollector.push(orderDetail), "length", orderDetailCollector.length);
+    orderDetailCollector.push(orderDetail)
     props.orderDetailFuncProps(orderDetail);
     props.orderCollectorArray(orderDetailCollector);
   }
