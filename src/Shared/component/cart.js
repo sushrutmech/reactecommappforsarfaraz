@@ -101,7 +101,7 @@ export default function Cart(props) {
   function sendOrderWhatsappFunc(reciptOrderAtri, fromAddOrSub) {
     setQuantity(reciptOrderAtri);
     if (fromAddOrSub == "ordernow") {
-      let mobileNumber = 7000423252
+      let mobileNumber = 8879887275
       let orederDataWhatsApp = quantity.totalOrder;
       let totalOrderPrice = quantity.totalOrderPrice
       let itemWithQuantitiy = orederDataWhatsApp.map((items) => {
