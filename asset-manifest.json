@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/reactecommappforsarfaraz/static/css/main.e1779ea6.css",
+    "main.css": "/reactecommappforsarfaraz/static/css/main.88ee780e.css",
     "main.js": "/reactecommappforsarfaraz/static/js/main.a98e8a24.js",
     "static/js/787.1b2b17eb.chunk.js": "/reactecommappforsarfaraz/static/js/787.1b2b17eb.chunk.js",
     "static/media/dish3.jpg": "/reactecommappforsarfaraz/static/media/dish3.d97d1895caf66f46388b.jpg",
@@ -8,12 +8,12 @@
     "static/media/revicons.ttf": "/reactecommappforsarfaraz/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/reactecommappforsarfaraz/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/reactecommappforsarfaraz/index.html",
-    "main.e1779ea6.css.map": "/reactecommappforsarfaraz/static/css/main.e1779ea6.css.map",
+    "main.88ee780e.css.map": "/reactecommappforsarfaraz/static/css/main.88ee780e.css.map",
     "main.a98e8a24.js.map": "/reactecommappforsarfaraz/static/js/main.a98e8a24.js.map",
     "787.1b2b17eb.chunk.js.map": "/reactecommappforsarfaraz/static/js/787.1b2b17eb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e1779ea6.css",
+    "static/css/main.88ee780e.css",
     "static/js/main.a98e8a24.js"
   ]
 }
