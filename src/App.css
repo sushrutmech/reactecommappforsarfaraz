@@ -37,6 +37,7 @@
   bottom: 100px;
   right: 34px;
   width: 30%;
+  z-index:999 !important;
 }
 
 .finalPriceContainer{
