@@ -37,6 +37,12 @@
   bottom: 100px;
   right: 34px;
   width: 30%;
+  z-index:999 !important;
+}
+
+.finalPriceContainer{
+  width: 100%;
+  display: flex;
 }
 
 @media screen and (max-width: 600px) {
@@ -84,9 +90,7 @@
  }
 
 
-.App {
-  /* text-align: center; */
-}
+
 
 .App-logo {
   height: 40vmin;
