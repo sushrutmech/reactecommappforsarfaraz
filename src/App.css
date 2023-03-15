@@ -36,9 +36,31 @@
   position: fixed;
   bottom: 100px;
   right: 34px;
-  background-color: blue;
   width: 30%;
+}
 
+@media screen and (max-width: 600px) {
+  .cartDiv{
+    position: fixed;
+    bottom: 100px;
+    right: 34px;
+    width: 70%;
+  }
+
+  .finalPriceContainer{
+    display:flex;
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .cartDiv{
+    position: fixed;
+    bottom: 100px;
+    right: 34px;
+    width: 70%;
+  }
 }
 
 .footers a {color:#696969;}
